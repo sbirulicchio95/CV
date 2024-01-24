@@ -1,0 +1,80 @@
+body {
+    font-family: 'Arimo', sans-serif;
+    min-height: 100%;
+}
+
+.contenitore  {
+    display: grid;
+    grid-template-columns: 400px 1fr
+}
+.interruzione {
+    height: 2px;
+    background-color: white;
+}
+.foto {
+    width: 100%;
+}
+
+.div_foto{
+    text-align: center;
+}
+.nome {
+    font-weight: 700; 
+    text-transform: uppercase;
+}
+.job    {
+    font-weight: 400; 
+    text-transform: uppercase;
+}
+
+.colonna-sinistra {
+    background-color: black;
+    padding: 30px;
+    color: white;
+}
+
+h3 {
+     text-transform: uppercase;
+}
+
+.contatti {
+line-height: 25px;
+}
+.colonna-destra{
+    margin : 30px 30px;
+}
+.education h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.colonna-destra hr {
+    height: 2px;
+    background-color: black;
+}
+
+.anni {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.experiences h2 {
+    text-transform: uppercase;
+}
+
+.experiences h3 {
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 25px;
+}
+.experiences h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 25px;
+    font-weight: bold;
+}
+.hard-skills {
+    line-height: 25px;
+}
+
+/* responsive */
+
