@@ -1,199 +1,280 @@
-/* ==========================================
-   RESET E IMPOSTAZIONI REALI PER STAMPA A4
-   ========================================== */
-html {
-    font-size: 11px; /* Abbassando la radice, tutti i tuoi 'rem' si scalano proporzionalmente */
-}
-
 body {
+
     font-family: 'Arimo', sans-serif;
+
+    min-height: 100%;
+
     margin: 0;
+
     padding: 0;
-    background-color: #ffffff;
-    color: #222222;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+
 }
 
-/* Contenitore bloccato sulle dimensioni millimetriche dell'A4 per evitare sorprese */
+
+
 .contenitore {
+
     display: grid;
-    grid-template-columns: 240px 1fr; /* Ridotto a 240px: lascia respirare le 8 esperienze a destra */
-    width: 210mm;
-    height: 297mm;
-    margin: 0 auto;
-    overflow: hidden;
-    box-sizing: border-box;
+
+    grid-template-columns: 400px 1fr;
+
 }
 
-/* ==========================================
-   COLONNA SINISTRA (Sidebar Scura)
-   ========================================== */
-.colonna-sinistra {
-    background-color: #000000;
-    padding: 15px 12px; /* Ridotto per non sprecare spazio sui bordi */
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Distribuisce lo spazio in modo armonioso */
-}
 
-.div_foto {
-    text-align: center;
-}
-
-.foto {
-    width: 90px; /* Dimensione controllata per non rubare spazio verticale */
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-}
-
-.nome {
-    font-size: 1.5rem;
-    font-weight: 700; 
-    text-transform: uppercase;
-    margin-top: 8px;
-    margin-bottom: 2px;
-    line-height: 1.1;
-}
-
-.job {
-    font-weight: 400; 
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    color: #cccccc;
-}
 
 .interruzione {
-    height: 1px; /* Più sottile ed elegante */
-    background-color: rgba(255, 255, 255, 0.2);
+
+    height: 2px;
+
+    background-color: white;
+
     border: none;
-    margin: 8px 0;
+
+    margin: 20px 0;
+
 }
+
+
+
+.foto {
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+
+.div_foto {
+
+    text-align: center;
+
+}
+
+
+
+.nome {
+
+    font-weight: 700; 
+
+    text-transform: uppercase;
+
+    margin-top: 20px;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.job {
+
+    font-weight: 400; 
+
+    text-transform: uppercase;
+
+    font-size: 1.2rem;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+.colonna-sinistra {
+
+    background-color: black;
+
+    padding: 30px;
+
+    color: white;
+
+}
+
+
 
 .colonna-sinistra h3 {
+
     text-transform: uppercase;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    margin-top: 5px;
-    margin-bottom: 4px;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 2px;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 1px;
+
+    margin-top: 25px;
+
 }
+
+
 
 .colonna-sinistra p {
-    font-size: 0.85rem;
-    line-height: 1.3; /* Compatto ma leggibile */
-    margin: 0;
+
+    font-size: 0.95rem;
+
+    line-height: 24px;
+
 }
+
+
 
 .contatti {
-    line-height: 1.4;
+
+    line-height: 25px;
+
 }
+
+
 
 .contatti i {
-    width: 18px; /* Ridotto per allineamento */
-    margin-right: 3px;
-    text-align: center;
+
+    width: 25px;
+
+    margin-right: 5px;
+
 }
 
-.hard-skills {
-    line-height: 1.3;
-}
 
-/* ==========================================
-   COLONNA DESTRA (Contenuto Principale)
-   ========================================== */
+
 .colonna-destra {
-    padding: 15px 20px; /* Sostituito il margin con il padding per gestire meglio la stampa */
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+
+    margin: 30px 40px;
+
 }
+
+
 
 .colonna-destra h2 {
+
     font-weight: 700;
+
     text-transform: uppercase;
-    font-size: 1.2rem;
-    border-bottom: 1.5px solid #000000; /* Linea di divisione elegante sotto i titoli */
-    padding-bottom: 2px;
-    margin-top: 5px;
-    margin-bottom: 4px;
+
+    font-size: 1.5rem;
+
+    border-bottom: none;
+
+    margin-top: 30px;
+
+    margin-bottom: 15px;
+
 }
+
+
 
 .colonna-destra hr {
-    display: none; /* Rimosso perché i titoli ora hanno già il border-bottom (risparmiamo spazio!) */
+
+    height: 2px;
+
+    background-color: black;
+
+    border: none;
+
+    margin: 25px 0;
+
 }
+
+
 
 .colonna-destra p, .colonna-destra ul {
-    font-size: 0.88rem;
-    line-height: 1.35; /* Spaziatura ottimale per la lettura senza sprechi */
-    color: #222222;
-    margin: 0;
+
+    font-size: 0.95rem;
+
+    line-height: 24px;
+
+    color: #222;
+
 }
+
+
 
 .colonna-destra ul {
-    padding-left: 15px;
-    margin-top: 2px;
+
+    padding-left: 20px;
+
+    margin-top: 5px;
+
 }
+
+
 
 .colonna-destra li {
-    margin-bottom: 2px; /* Micro-spazio tra i punti dell'elenco */
+
+    margin-bottom: 5px;
+
 }
+
+
 
 .colonna-destra a {
+
     color: #0066cc;
+
     text-decoration: none;
+
 }
+
+
 
 .colonna-destra a:hover {
+
     text-decoration: underline;
+
 }
 
-/* Sezione Esperienze Lavorative */
+
+
 .experiences h3 {
-    font-weight: 700;
+
+    font-weight: 600;
+
     text-transform: uppercase;
-    line-height: 1.2;
-    margin-top: 6px;
-    margin-bottom: 1px;
-    color: #111111;
-    font-size: 0.95rem;
+
+    line-height: 25px;
+
+    margin-top: 20px;
+
+    margin-bottom: 2px;
+
+    color: #555;
+
+    font-size: 1rem;
+
 }
+
+
 
 .experiences h4 {
-    text-transform: none; /* Rimosso l'uppercase totale per differenziarlo dall'h3 */
-    line-height: 1.2;
-    font-weight: 400;
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: 4px;
-    color: #555555;
-    font-size: 0.9rem;
-}
 
-/* Sezione Istruzione */
-.education h2 {
-    font-weight: 700;
     text-transform: uppercase;
+
+    line-height: 25px;
+
+    font-weight: bold;
+
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+    font-size: 1.1rem;
+
 }
 
-/* Regole CSS specifiche per il motore di stampa del browser */
-@media print {
-    body {
-        width: 210mm;
-        height: 297mm;
-    }
-    .contenitore {
-        width: 210mm;
-        height: 297mm;
-    }
-    @page {
-        size: A4;
-        margin: 0; /* Elimina i margini di default della stampante */
-    }
+
+
+.education h2 {
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
 }
+
+
+
+.hard-skills {
+
+    line-height: 25px;
+
+} 
+
