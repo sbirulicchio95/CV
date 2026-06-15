@@ -4,169 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CV di Daniele Tria</title>
+        <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/ca00d78fa1.js" crossorigin="anonymous"></script>
-        
-        <style>
-            /* Reset globale e blocco millimetrico A4 */
-            * { box-sizing: border-box; margin: 0; padding: 0; }
-            
-            body {
-                font-family: 'Arimo', sans-serif;
-                color: #222222;
-                background-color: #ffffff;
-                line-height: 1.25;
-                font-size: 9.5px;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .contenitore {
-                display: grid;
-                grid-template-columns: 235px 1fr; /* Rapporto ottimale per non stringere i testi a destra */
-                width: 210mm;
-                height: 297mm;
-                margin: 0 auto;
-                overflow: hidden;
-                background: #ffffff;
-            }
-
-            /* COLONNA SINISTRA (Sidebar Scura) */
-            .colonna-sinistra {
-                background-color: #000000;
-                padding: 14px 12px;
-                color: #ffffff;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .intro { text-align: center; }
-            .div_foto { margin-bottom: 5px; }
-            .foto {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 2px solid #ffffff;
-            }
-            .nome { font-size: 16px; font-weight: 700; text-transform: uppercase; line-height: 1.1; margin-top: 5px; color: #ffffff; }
-            .job { font-size: 8.5px; font-weight: 500; text-transform: uppercase; color: #aaaaaa; margin-top: 3px; letter-spacing: 0.5px; }
-            
-            .interruzione {
-                height: 1px;
-                background-color: rgba(255, 255, 255, 0.15);
-                border: none;
-                margin: 5px 0;
-            }
-
-            .colonna-sinistra h3 {
-                text-transform: uppercase;
-                font-size: 9px;
-                letter-spacing: 0.5px;
-                margin-bottom: 4px;
-                color: #ffffff;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                padding-bottom: 1px;
-            }
-
-            .colonna-sinistra p, .colonna-sinistra li {
-                font-size: 8.5px;
-                line-height: 1.3;
-                color: #dddddd;
-            }
-            .colonna-sinistra ul { list-style: none; padding-left: 0; }
-            .colonna-sinistra li { margin-bottom: 3px; }
-            .colonna-sinistra b { color: #ffffff; }
-            
-            .contatti p { line-height: 1.4; }
-            .contatti i { width: 14px; text-align: center; margin-right: 3px; color: #ffffff; }
-            .colonna-sinistra a { color: #63b3ed; text-decoration: none; font-size: 8px; display: block; margin-top: 1px; }
-
-            /* COLONNA DESTRA (Corpo Principale) */
-            .colonna-destra {
-                padding: 14px 16px;
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .colonna-destra h2 {
-                font-weight: 700;
-                text-transform: uppercase;
-                font-size: 11px;
-                color: #000000;
-                border-bottom: 1.5px solid #000000;
-                padding-bottom: 1px;
-                margin-top: 2px;
-                margin-bottom: 4px;
-                letter-spacing: 0.3px;
-            }
-
-            .colonna-destra p, .colonna-destra ul {
-                font-size: 9px;
-                line-height: 1.3;
-                color: #222222;
-            }
-
-            .experience-item { margin-bottom: 5px; }
-            .job-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: baseline;
-            }
-            .job-title { font-size: 9.5px; font-weight: 700; color: #000000; text-transform: uppercase; }
-            .job-date { font-size: 8.5px; color: #555555; font-weight: 600; white-space: nowrap; }
-            .job-company { font-size: 9px; font-weight: 600; color: #444444; font-style: italic; margin-bottom: 1px; }
-            .job-summary { font-size: 8.5px; color: #333333; margin-bottom: 2px; line-height: 1.2; }
-
-            ul.bullets { padding-left: 12px; margin-top: 1px; }
-            ul.bullets li { margin-bottom: 1px; font-size: 8.5px; text-align: justify; }
-
-            /* Formato compatto per i ruoli più datati */
-            .compact-experience {
-                margin-bottom: 4px;
-                padding-bottom: 3px;
-                border-bottom: 1px dashed #e2e8f0;
-            }
-            .compact-header {
-                display: flex;
-                justify-content: space-between;
-                font-size: 8.5px;
-                font-weight: 700;
-            }
-            .compact-desc { font-size: 8.5px; color: #444444; font-style: italic; }
-
-            .awards p { font-size: 8.5px; margin-bottom: 2px; }
-            
-            .education-item { margin-bottom: 4px; }
-            .edu-header { display: flex; justify-content: space-between; font-size: 9px; font-weight: 700; }
-            .edu-desc { font-size: 8.5px; color: #444444; }
-
-            /* Ottimizzazioni per il motore di stampa PDF */
-            @media print {
-                body { width: 210mm; height: 297mm; }
-                .contenitore { width: 210mm; height: 297mm; }
-                @page { size: A4; margin: 0; }
-            }
-        </style>
     </head>
     <body>
         <div class="contenitore">
-            <!-- COLONNA SINISTRA (Sidebar scura) -->
+            <!-- COLONNA SINISTRA -->
             <div class="colonna-sinistra">
                 <div class="intro">
                     <div class="div_foto">
                         <img class="foto" src="foto_cv.jpg" alt="Foto Daniele Tria">
                     </div>
-                    <h1 class="nome">Daniele Tria</h1> 
-                    <h2 class="job">CRM & Digital Specialist</h2>  
+                    <h1 class="nome">Daniele<br>Tria</h1> 
+                    <h2 class="job">CRM & Digital Marketing Manager</h2>  
                     <hr class="interruzione">
                 </div>
                 
-                <div class="sidebar-section contatti">
+                <div class="contatti">
                     <h3>Contatti</h3>
                     <p>
                         <i class="fa-solid fa-phone"></i> +39 331 229 7307<br>
@@ -174,186 +31,161 @@
                         <i class="fa-solid fa-house"></i> Torino, Italia<br>
                         <i class="fa-brands fa-linkedin"></i> linkedin.com/in/daniele-tria
                     </p>    
+                    <hr class="interruzione">
                 </div>
                 
-                <div class="sidebar-section">
-                    <h3>Interessi</h3>
-                    <p>Amo la tecnologia, gli ecosistemi digitali e i media interattivi. Seguo costantemente i trend tech per applicare soluzioni avanzate nel lavoro. Appassionato di videogiochi, cucina, auto e caffè!</p>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3>Competenze Tecniche</h3>
-                    <ul>
-                        <li><b>CRM & Automation:</b> Walcu CRM, Leadmanager, MailUp, LeadsBridge, Zapier, JSONLead.</li>
-                        <li><b>Analytics & Tracking:</b> GA4, Google Tag Manager, Excel (Power Query).</li>
-                        <li><b>Digital Marketing & SEO:</b> Google Ads, Meta Business Suite, WordPress, SEO.</li>
-                        <li><b>Multimedia:</b> Final Cut Pro, Adobe Creative Suite.</li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3>Competenze Trasversali</h3>
-                    <p>Data-driven problem solving, accuratezza e rigore operativo, leadership di team interfunzionali, ottimizzazione dei processi, onboarding e mentoring.</p>
-                </div>
-                
-                <div class="sidebar-section"> 
-                    <h3>Certificazioni</h3>
-                    <ul>
-                        <li>
-                            <b>Digital Marketing Analyst</b>
-                            <a href="https://lacerba.io/certificazioni/8bb630.pdf" target="_blank">Lacerba.io - ID: 8bb630</a>
-                        </li>
-                        <li style="margin-top: 3px;">
-                            <b>Excel e Power Query Avanzato</b>
-                            <a href="https://lacerba.io/certificazioni/d43506.pdf" target="_blank">Lacerba.io - ID: d43506</a>
-                        </li>
-                        <li style="margin-top: 3px;">
-                            <b>Google Ads sulla Rete di Ricerca</b>
-                            <a href="https://skillshop.exceedlms.com/student/award/j7CngqUdQty53e2hxJdtV4dY" target="_blank">Google Skillshop</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3>Lingue</h3>
+                <div class="About-me">
+                    <h3>Profilo Professionale</h3>
                     <p>
-                        <b>Italiano:</b> Madrelingua<br>
-                        <b>Inglese:</b> C1 (Ottima conoscenza operativa)
+                        Professionista in ambito CRM e Digital Marketing con 8 anni di esperienza nello sviluppo di strategie basate sui dati, automazione dei processi di lead management e coordinamento di team interfunzionali.
+                    </p>
+                    <hr class="interruzione">
+                </div>
+                
+                <div class="Interests">
+                    <h3>Interessi</h3>
+                    <p>
+                        Amo la tecnologia, gli ecosistemi digitali e i media interattivi. Seguo costantemente i trend tecnologici e le innovazioni di settore per applicare soluzioni avanzate nei flussi di lavoro quotidiani. Sono un appassionato di videogiochi, cucina, auto e caffè! 
                     </p>
                 </div>
             </div>
 
-            <!-- COLONNA DESTRA (Contenuto principale) -->
+            <!-- COLONNA DESTRA -->
             <div class="colonna-destra">
-                <div class="profile">
-                    <h2>Profilo Professionale</h2>
-                    <p>Professionista in ambito CRM e Digital Marketing con 8 anni di esperienza nello sviluppo di strategie basate sui dati, automazione dei processi di lead management e coordinamento di team interfunzionali.</p>
-                </div>
-
                 <div class="experiences">
                     <h2>Esperienze Professionali</h2>
 
-                    <!-- Ruolo 1 -->
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span class="job-title">CRM Manager</span>
-                            <span class="job-date">Aprile 2026 - Presente</span>
-                        </div>
-                        <div class="job-company">Gruppo Intergea Nord Ovest</div>
-                        <div class="job-summary">Coordinamento del deployment del nuovo CRM del gruppo su tutte le aziende del Nord Ovest per Vendita e Post Vendita.</div>
-                        <ul class="bullets">
-                            <li>Supporto alle partecipate nella definizione di flussi di qualità, nurturing, acquisizione e massimizzazione del CLV.</li>
-                            <li>Ottimizzazione di flussi automatizzati di lead management attraverso touchpoint multicanale.</li>
-                            <li>Costruzione di un modello di lead scoring basato sui dati e sulle azioni degli operatori in piattaforma.</li>
-                            <li>Implementazione flussi automatici sul CRM per monitorare in tempo reale il Lead Response Time e l'assegnazione lead.</li>
-                            <li>Segmentazione avanzata tramite linguaggio proprietario per la costruzione di audience, workflow e KPI.</li>
-                            <li>Coordinamento della formazione avanzata e dell'onboarding delle concessionarie e delle officine.</li>
-                        </ul>
-                    </div>
+                    <h3>Aprile 2026 - Presente</h3>
+                    <h4>CRM Manager - Gruppo Intergea Nord Ovest</h4>
+                    <p>
+                        Coordinamento del deployment del nuovo CRM del gruppo su tutte le aziende del Nord Ovest per Vendita e Post Vendita.
+                    </p>
+                    <ul>
+                        <li>Supporto alle partecipate del gruppo nella definizione di flussi di qualità, nurturing, acquisizione e massimizzazione del Customer Lifetime Value sia in vendita che in post vendita.</li>
+                        <li>Progettazione e ottimizzazione di flussi automatizzati di lead management attraverso touchpoint multicanale.</li>
+                        <li>Costruzione di un <b>modello di lead scoring basato sui dati</b>b> e sulle azioni degli operatori in piattaforma.</li>
+                        <li>Implementato un <b>flusso di automazione sul CRM per calcolare e monitorare in tempo reale il Lead Response Time.</b>b></li>
+                        <li>Sviluppato un sistema di assegnazione automatica per qualificare le nuove lead in ingresso e assegnarle agli utenti solo al raggiungimento di soglie di carico specifiche.</li>
+                        <li><b>Interrogazione e segmentazione avanzata dei dati CRM</b>b> tramite linguaggio proprietario per la costruzione di audience, workflow automatici, lead scoring e monitoraggio KPI.</li>
+                        <li>Coordinamento della formazione avanzata e dell'onboarding delle concessionarie e delle officine sulle piattaforme CRM di Gruppo.</li>
+                        
+                    </ul>
 
-                    <!-- Ruolo 2 -->
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span class="job-title">Digital Marketing Manager</span>
-                            <span class="job-date">Gennaio 2025 - Marzo 2026</span>
-                        </div>
-                        <div class="job-company">Theorema SRL & Gruppo Logica SPA</div>
-                        <div class="job-summary">Coordinamento delle attività digitali per due realtà del Gruppo, con gestione di una risorsa junior e del team creativo.</div>
-                        <ul class="bullets">
-                            <li>Guidato l'adozione aziendale e il setup strutturale del nuovo CRM (Walcu) nei team di vendita e BDC.</li>
-                            <li>Supervisionato progetti di restyling web, tracciamento campagne ADV e creazione dashboard analitiche su DB.</li>
-                            <li>Gestito il budget marketing offline e le relazioni con gli headquarter Stellantis per conformità e rimborsi.</li>
-                            <li>Curato il progetto di onboarding del nuovo fornitore web in ottica SEO e interoperabilità con il CRM.</li>
-                        </ul>
-                    </div>
+                    <h3>Gennaio 2025 - Marzo 2026</h3>
+                    <h4>Digital Marketing Manager - Theorema SRL & Gruppo Logica SPA</h4>
+                    <p>
+                        Coordinamento delle attività di marketing digitale per due delle principali realtà aziendali del Gruppo Intergea Nord Ovest, con la gestione diretta di una risorsa junior e del team creativo.
+                    </p>
+                    <ul>
+                        <li>Guidato l'adozione aziendale e la prima fase di setup strutturale del nuovo <b>CRM (Walcu)</b> all'interno dei team di vendita e BDC.</li>
+                        <li>Supervisionato progetti di restyling web e l'infrastruttura di tracciamento per le <b>campagne ADV digitali multicanale</b> orientate alla lead generation.</li>
+                        <li>Gestito il budget di marketing offline e le relazioni con gli headquarter Stellantis per le attività di reporting, conformità del brand e gestione dei rimborsi.</li>
+                        <li>Ho curato il progetto di onboarding del nuovo fornitore dei siti web di Theorema SRL e Gruppo Logica SPA in ottica di ottimizzazione SEO e interoperabilità con il CRM.</li>
+                        <li>Creazione di dashboard analitiche basate su KPI sul CRM, con chiamate al DB Sottostante, monitoraggio delle performance del team e delle camapagne marketing.</li>
+                    </ul>
 
-                    <!-- Ruolo 3 -->
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span class="job-title">Digital Marketing & CRM Specialist</span>
-                            <span class="job-date">Aprile 2022 - Dicembre 2024</span>
-                        </div>
-                        <div class="job-company">Theorema SRL & Gruppo Logica SPA</div>
-                        <div class="job-summary">Gestione end-to-end dei processi di lead generation e automazione della customer journey per molteplici brand automotive.</div>
-                        <ul class="bullets">
-                            <li>Implementato i sistemi CRM (Lead Manager) e strutturato flussi di automation tramite MailUp e LeadsBridge.</li>
-                            <li>Raggiunto un incremento del +400% del traffico organico per Theoremaonline.com e del +30% per Gruppologicaspa.it.</li>
-                            <li>Lanciato da zero il brand BYD: prima pagina Google per query competitive e centinaia di migliaia di views su YouTube.</li>
-                            <li>Erogato sessioni di formazione specialistica per i consulenti di vendita su lead management e mobilità elettrica.</li>
-                        </ul>
-                    </div>
+                    <h3>Aprile 2022 - Dicembre 2024</h3>
+                    <h4>Digital Marketing & CRM Specialist - Theorema SRL & Gruppo Logica SPA</h4>
+                    <p>
+                        Gestione end-to-end dei processi di lead generation e automazione della customer journey per molteplici brand automotive mandatarie dei dealer facenti parte di Gruppo Intergea Nord Ovest.
+                    </p>
+                    <ul>
+                        <li>Implementato operativamente i sistemi CRM (Lead Manager) e strutturato i flussi di marketing automation tramite <b>MailUp e LeadsBridge</b>.</li>
+                        <li>Raggiunto un <b>incremento del +400% del traffico organico per Theoremaonline.com</b> e del +30% per Gruppologicaspa.it attraverso interventi SEO strutturali.</li>
+                        <li>Lanciato da zero la presenza digitale del brand BYD per la concessionaria Theorema, posizionando il sito in prima pagina su Google per query competitive e raggiungendo centinaia di migliaia di visualizzazioni d'organico su YouTube.</li>
+                        <li>Erogato sessioni di formazione specialistica per i consulenti di vendita sulla mobilità elettrica e tecnologie sostenibili e sul corretto utilizzo dei sistemi di lead management interni all'azienda.</li>
+                    </ul>
 
-                    <!-- Ruoli storici compatti per garantire la pagina singola -->
-                    <div class="compact-experience">
-                        <div class="compact-header">
-                            <span>DIGITAL MARKETING SPECIALIST — Autojet SRL</span>
-                            <span class="job-date">Marzo 2021 - Marzo 2022</span>
-                        </div>
-                        <div class="compact-desc">Trasformazione digitale della customer journey, ottimizzazione CRM e coordinamento agenzie/videomaker.</div>
-                    </div>
+                    <h3>Marzo 2021 - Marzo 2022</h3>
+                    <h4>Digital Marketing Specialist - Autojet SRL</h4>
+                    <p>
+                        Guidato la trasformazione digitale della customer journey e dei sistemi di tracciamento dei lead tramite l'ottimizzazione del CRM. Coordinamento di agenzie esterne e videomaker per le piattaforme social e YouTube.
+                    </p>
 
-                    <div class="compact-experience">
-                        <div class="compact-header">
-                            <span>SOCIAL MEDIA STRATEGIST — Authos SPA</span>
-                            <span class="job-date">Dicembre 2020 - Marzo 2021</span>
-                        </div>
-                        <div class="compact-desc">Sviluppo e monitoraggio del piano editoriale social orientato agli obiettivi commerciali di lead generation.</div>
-                    </div>
+                    <h3>Dicembre 2020 - Marzo 2021</h3>
+                    <h4>Social Media Strategist - Authos SPA</h4>
+                    <p>
+                        Sviluppo e monitoraggio del piano editoriale social, allineando la produzione di contenuti multimediali con gli obiettivi commerciali di lead generation.
+                    </p>
 
-                    <div class="compact-experience">
-                        <div class="compact-header">
-                            <span>JUNIOR INTERNATIONAL ACCOUNT — Starcom</span>
-                            <span class="job-date">Febbraio 2020 - Dicembre 2020</span>
-                        </div>
-                        <div class="compact-desc">Coordinamento agenzie EMEA per cliente Stellantis (Jeep & Fleet), reportistica performance e controllo budget.</div>
-                    </div>
+                    <h3>Febbraio 2020 - Dicembre 2020</h3>
+                    <h4>Junior International Account - Starcom</h4>
+                    <p>
+                        Coordinamento quotidiano con le agenzie locali in Europa e Medio Oriente per il cliente Stellantis (Jeep & Fleet & Business). Gestione della reportistica settimanale delle performance, analisi della spesa media e controllo del budget.
+                    </p>
 
-                    <div class="compact-experience">
-                        <div class="compact-header">
-                            <span>DIGITAL MARKETING SPECIALIST — Autojet SRL</span>
-                            <span class="job-date">Marzo 2019 - Gennaio 2020</span>
-                        </div>
-                        <div class="compact-desc">Gestione dei canali digitali aziendali, dei flussi di instradamento dei lead, sistemi CRM e DMS.</div>
-                    </div>
+                    <h3>Marzo 2019 - Gennaio 2020</h3>
+                    <h4>Digital Marketing Specialist - Autojet SRL</h4>
+                    <p>
+                        Gestione dei canali digitali aziendali, dei flussi di instradamento dei lead, CRM e DMS.
+                    </p>
 
-                    <div class="compact-experience" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-                        <div class="compact-header">
-                            <span>JUNIOR ACCOUNT — GDGpr</span>
-                            <span class="job-date">Settembre 2018 - Febbraio 2019</span>
-                        </div>
-                        <div class="compact-desc">Gestione quotidiana dei progetti, stesura comunicati stampa e coordinamento media per account tech e gaming.</div>
-                    </div>
+                    <h3>Settembre 2018 - Febbraio 2019</h3>
+                    <h4>Junior Account - GDGpr</h4>
+                    <p>
+                        Gestione quotidiana dei progetti, stesura di comunicati stampa e coordinamento media per account internazionali nei settori tech, gaming e multimedia.
+                    </p>
+                    <hr>
+                </div>
+
+                <div class="certifications"> 
+                    <h2>Certificazioni</h2>
+                    <h3>Digital Marketing Analyst</h3>
+                    <p><a href="https://lacerba.io/certificazioni/8bb630.pdf" target="_blank">Lacerba.io - Agosto 2021 - ID: 8bb630</a></p>
+                    
+                    <h3>Corso Avanzato Excel e Power Query</h3>
+                    <p><a href="https://lacerba.io/certificazioni/d43506.pdf" target="_blank">Lacerba.io - Marzo 2022 - ID: d43506</a></p>
+
+                    <h3>Certificazione Google Ads sulla Rete di Ricerca</h3>
+                    <p><a href="https://skillshop.exceedlms.com/student/award/j7CngqUdQty53e2hxJdtV4dY" target="_blank">Google Skillshop - Conseguita a Marzo 2023</a></p>
+                    <hr>
+                </div>
+
+                <div class="hard-skills">
+                    <h2>Competenze Tecniche</h2>
+                    <p>
+                        <b>CRM & Marketing Automation:</b> Walcu CRM, Leadmanager (Visual Software), MailUp, LeadsBridge, Zapier, Tecnologia JSONLead.<br>
+                        <b>Data Analytics & Tracking:</b> Google Analytics 4 (GA4), Google Tag Manager, Microsoft Excel (Avanzato, Power Query).<br>
+                        <b>Digital Marketing & SEO:</b> Google Ads, Meta Business Suite, WordPress, Search Engine Optimization (SEO).<br>
+                        <b>Multimedia:</b> Final Cut Pro, Adobe Creative Suite (Buona conoscenza).
+                    </p>
+                    <hr>
+                </div>
+
+                <div class="soft-skills">
+                    <h2>Competenze Trasversali</h2>
+                    <p>Problem solving guidato dai dati, accuratezza e rigore operativo, leadership di team interfunzionali, ottimizzazione dei processi, rapidità di apprendimento, onboarding e mentoring nuovi assunti del reparto marketing.</p>
+                    <hr>
                 </div>
 
                 <div class="awards">
                     <h2>Premi e Riconoscimenti</h2>
-                    <p>🏆 <b>Automotive Digital Marketing Award 2024</b> – Vincitori con Theorema SRL & Gruppo Logica SPA (Dealer Day 2025).</p>
-                    <p>🏆 <b>“Best Web Visibility”</b> – Vincitori ai BtheOne Dealer Awards per il progetto pilota siti web di Gruppo.</p>
+                    <p>
+                        🏆 <b>Automotive Digital Marketing Award 2024</b> – Vincitori con Theorema SRL & Gruppo Logica SPA (Presentato all'Automotive Dealer Day 2025).<br>
+                        🏆 <b>“Best Web Visibility”</b> – Vincitori ai BtheOne Dealer Awards per il progetto pilota per i siti web di Gruppo Intergea Nord Ovest.
+                    </p>
+                    <hr>
+                </div>
+
+                <div class="languages">
+                    <h2>Lingue</h2>
+                    <p>
+                        <b>Italiano:</b> Madrelingua<br>
+                        <b>Inglese:</b> C1 (Ottima conoscenza operativa)
+                    </p>
+                    <hr>
                 </div>
 
                 <div class="education">
                     <h2>Formazione</h2>
-                    <div class="education-item">
-                        <div class="edu-header">
-                            <span>Università degli Studi di Torino</span>
-                            <span class="job-date">2017 - 2019</span>
-                        </div>
-                        <div class="edu-desc">Laurea Magistrale in Comunicazione Pubblica e Politica | Votazione: 110/110</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="edu-header">
-                            <span>Università degli Studi di Torino</span>
-                            <span class="job-date">2014 - 2017</span>
-                        </div>
-                        <div class="edu-desc">Laurea Triennale in Scienze Politiche | Votazione: 107/110</div>
-                    </div>
-                    <div class="education-item" style="margin-bottom: 0;">
-                        <div class="edu-header">
-                            <span>Liceo Scientifico Tecnologico Edoardo Amaldi</span>
-                            <span class="job-date">2008 - 2014</span>
-                        </div>
-                        <div class="edu-desc">Diploma di Liceo Scientifico Tecnologico | Votazione: 86/100</div>
-                    </div>
+                    <h3>2017 - 2019</h3>
+                    <p><b>Università degli Studi di Torino</b><br>Laurea Magistrale in Comunicazione Pubblica e Politica | Votazione: 110/110</p>
+                    
+                    <h3>2014 - 2017</h3>
+                    <p><b>Università degli Studi di Torino</b><br>Laurea Triennale in Scienze Politiche | Votazione: 107/110</p>
+                    
+                    <h3>2008 - 2014</h3>
+                    <p><b>Liceo Scientifico Tecnologico Edoardo Amaldi</b><br>Diploma di Liceo Scientifico Tecnologico | Votazione: 86/100</p>
                 </div>
             </div>
         </div>
