@@ -1,559 +1,411 @@
-/* =====================================================
-   CV Daniele Tria
-   Versione 2026
-   ===================================================== */
+/* =========================================
+   RESET
+========================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    font-size:16px;
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
-body{
-
-    font-family:'Arimo',sans-serif;
-    background:#ececec;
-    color:#222;
-    line-height:1.45;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-
+body {
+    background-color: #e9ebef;
+    font-family: "Arimo", Arial, sans-serif;
+    color: #24272d;
 }
 
-/* =====================================================
-   CONTENITORE A4
-   ===================================================== */
 
-.contenitore{
+/* =========================================
+   CONTENITORE PRINCIPALE
+========================================= */
 
-    width:210mm;
-    min-height:297mm;
+.contenitore {
+    display: grid;
+    grid-template-columns: 245px 1fr;
 
-    margin:20px auto;
+    width: 210mm;
+    min-height: 297mm;
 
-    display:grid;
+    margin: 20px auto;
 
-    grid-template-columns:32% 68%;
+    background-color: #ffffff;
 
-    background:#fff;
-
-    box-shadow:0 12px 40px rgba(0,0,0,.12);
-
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* =====================================================
+
+/* =========================================
    COLONNA SINISTRA
-   ===================================================== */
+========================================= */
 
-.colonna-sinistra{
+.colonna-sinistra {
+    background-color: #202936;
+    color: #ffffff;
 
-    background:#1f2733;
-
-    color:#fff;
-
-    padding:26px;
-
+    padding: 22px 24px 18px;
 }
 
-/* =====================================================
-   FOTO
-   ===================================================== */
-
-.div_foto{
-
-    text-align:center;
-
-    margin-bottom:18px;
-
+.intro {
+    text-align: center;
 }
 
-.foto{
+.div-foto {
+    display: flex;
+    justify-content: center;
 
-    width:140px;
-
-    height:140px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:4px solid rgba(255,255,255,.18);
-
+    margin-bottom: 14px;
 }
 
-/* =====================================================
-   HEADER
-   ===================================================== */
+.foto {
+    display: block;
 
-.nome{
+    width: 104px;
+    height: 104px;
 
-    text-transform:uppercase;
+    object-fit: cover;
+    object-position: center;
 
-    text-align:center;
-
-    font-size:2rem;
-
-    font-weight:700;
-
-    line-height:1.05;
-
-    letter-spacing:1px;
-
-    margin-bottom:8px;
-
+    border: 4px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
 }
 
-.job{
+.nome {
+    margin: 0 0 7px;
 
-    text-align:center;
+    font-size: 27px;
+    line-height: 0.98;
 
-    font-size:1rem;
+    font-weight: 700;
 
-    font-weight:400;
+    letter-spacing: 1.4px;
 
-    color:#d8dde5;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    margin-bottom:20px;
-
+    text-transform: uppercase;
 }
 
-/* =====================================================
-   LINEA DIVISORIA
-   ===================================================== */
+.job {
+    margin: 0;
 
-.interruzione{
+    font-size: 12px;
+    line-height: 1.45;
 
-    height:1px;
+    font-weight: 400;
 
-    border:none;
+    letter-spacing: 1.6px;
 
-    background:rgba(255,255,255,.15);
-
-    margin:18px 0;
-
+    text-transform: uppercase;
 }
 
-/* =====================================================
-   SEZIONI SINISTRA
-   ===================================================== */
+.interruzione {
+    width: 100%;
+    height: 1px;
 
-.colonna-sinistra section{
+    margin: 14px 0;
 
-    margin-bottom:18px;
+    border: 0;
 
+    background-color: rgba(255, 255, 255, 0.18);
 }
 
-.colonna-sinistra h3{
-
-    text-transform:uppercase;
-
-    font-size:.82rem;
-
-    letter-spacing:2px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-    color:#ffffff;
-
+.colonna-sinistra section {
+    margin: 0;
 }
 
-.colonna-sinistra p{
+.colonna-sinistra h3 {
+    margin: 0 0 8px;
 
-    font-size:.82rem;
+    font-size: 11px;
+    line-height: 1.2;
 
-    line-height:1.55;
+    font-weight: 700;
 
-    color:#f1f1f1;
+    letter-spacing: 1.6px;
 
-    margin-bottom:10px;
-
+    text-transform: uppercase;
 }
 
-.colonna-sinistra b{
+.colonna-sinistra p {
+    margin: 0 0 8px;
 
-    color:#fff;
+    font-size: 10.3px;
+    line-height: 1.42;
 
+    color: rgba(255, 255, 255, 0.92);
 }
 
-.contatti p{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:10px;
-
+.colonna-sinistra p:last-child {
+    margin-bottom: 0;
 }
 
-.contatti i{
-
-    width:16px;
-
-    margin-top:3px;
-
-    color:#b9c5d8;
-
+.colonna-sinistra strong {
+    color: #ffffff;
+    font-weight: 700;
 }
 
-/* =====================================================
+
+/* =========================================
+   CONTATTI
+========================================= */
+
+.contatti p {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 7px;
+
+    align-items: start;
+}
+
+.contatti i {
+    padding-top: 2px;
+
+    font-size: 10px;
+
+    color: #c5cede;
+}
+
+.contatti span {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   COMPETENZE TECNICHE
+========================================= */
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 4px 8px;
+}
+
+.skills span {
+    display: block;
+
+    font-size: 9.7px;
+    line-height: 1.25;
+
+    color: rgba(255, 255, 255, 0.94);
+}
+
+
+/* =========================================
+   FORMAZIONE E CERTIFICAZIONI
+========================================= */
+
+.titolo-secondario {
+    margin-top: 12px !important;
+}
+
+.lista-compatta {
+    margin-bottom: 7px !important;
+}
+
+
+/* =========================================
    COLONNA DESTRA
-   ===================================================== */
+========================================= */
 
-.colonna-destra{
-
-    padding:34px;
-
+.colonna-destra {
+    padding: 27px 32px 20px;
 }
 
-.colonna-destra h2{
-
-    font-size:1.7rem;
-
-    text-transform:uppercase;
-
-    font-weight:700;
-
-    color:#1f2733;
-
-    letter-spacing:1px;
-
-    margin-bottom:28px;
-
+.experiences {
+    margin: 0;
+    padding: 0;
 }
 
-.colonna-destra p{
 
-    font-size:.90rem;
+/* =========================================
+   ESPERIENZE
+========================================= */
 
-    line-height:1.65;
+.experience {
+    position: relative;
 
-    color:#333;
+    margin: 0 0 17px;
+    padding: 0 0 15px;
 
-    margin-bottom:10px;
+    border-bottom: 1px solid #e8e9ec;
 
+    break-inside: avoid;
+    page-break-inside: avoid;
 }
 
-.colonna-destra b{
+.experience:last-child,
+.ultima-esperienza {
+    margin-bottom: 0;
+    padding-bottom: 0;
 
-    color:#111;
-
-    font-weight:700;
-
+    border-bottom: 0;
 }
 
-.colonna-destra a{
+.periodo {
+    display: inline-block;
 
-    color:inherit;
+    margin-bottom: 7px;
+    padding: 4px 10px;
 
-    text-decoration:none;
+    border-radius: 20px;
 
+    background-color: #f1f4ff;
+    color: #6681ba;
+
+    font-size: 9.5px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    text-transform: uppercase;
 }
 
-.colonna-destra a:hover{
+.experience h2 {
+    margin: 0 0 2px;
 
-    text-decoration:underline;
+    font-size: 18px;
+    line-height: 1.08;
 
+    font-weight: 700;
+
+    color: #22252a;
 }
 
-.colonna-destra hr{
+.experience h3 {
+    margin: 0 0 8px;
 
-    display:none;
+    font-size: 12.5px;
+    line-height: 1.2;
 
+    font-weight: 600;
+
+    color: #727780;
 }
 
-/* =====================================================
-   ESPERIENZE PROFESSIONALI
-   ===================================================== */
+.experience p {
+    margin: 0 0 7px;
 
-.experiences{
+    font-size: 10.7px;
+    line-height: 1.43;
 
-    width:100%;
+    text-align: justify;
 
+    color: #353940;
 }
 
-.experience{
-
-    margin-bottom:30px;
-
-    padding-bottom:18px;
-
-    border-bottom:1px solid #ececec;
-
+.experience p:last-child {
+    margin-bottom: 0;
 }
 
-.experience:last-child{
+.experience strong {
+    font-weight: 700;
 
-    border-bottom:none;
-
-    margin-bottom:0;
-
-    padding-bottom:0;
-
+    color: #20242a;
 }
 
-/* =====================================================
-   DATA
-   ===================================================== */
 
-.periodo{
+/* =========================================
+   ESPERIENZE COMPATTE
+========================================= */
 
-    display:inline-block;
-
-    font-size:.78rem;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-    text-transform:uppercase;
-
-    color:#4b74c8;
-
-    background:#eef3ff;
-
-    padding:4px 10px;
-
-    border-radius:20px;
-
-    margin-bottom:12px;
-
+.experience-compatta {
+    margin-bottom: 13px;
+    padding-bottom: 12px;
 }
 
-/* =====================================================
-   RUOLO
-   ===================================================== */
-
-.experience h3{
-
-    font-size:1.35rem;
-
-    font-weight:700;
-
-    color:#202020;
-
-    margin-bottom:4px;
-
-    text-transform:none;
-
-    line-height:1.2;
-
+.experience-compatta .periodo {
+    margin-bottom: 6px;
 }
 
-/* =====================================================
-   AZIENDA
-   ===================================================== */
-
-.experience h4{
-
-    font-size:.98rem;
-
-    font-weight:600;
-
-    color:#6b7280;
-
-    margin-bottom:14px;
-
-    text-transform:none;
-
-    letter-spacing:.3px;
-
+.experience-compatta h2 {
+    font-size: 16.5px;
 }
 
-/* =====================================================
-   PARAGRAFI
-   ===================================================== */
-
-.experience p{
-
-    text-align:justify;
-
-    margin-bottom:10px;
-
-    line-height:1.65;
-
+.experience-compatta h3 {
+    margin-bottom: 6px;
 }
 
-.experience p:last-child{
-
-    margin-bottom:0;
-
+.experience-compatta p {
+    font-size: 10.4px;
+    line-height: 1.38;
 }
 
-/* =====================================================
-   TITOLI DELLE ALTRE SEZIONI
-   ===================================================== */
 
-.education h2,
-.certificazioni h2,
-.languages h2,
-.awards h2,
-.hard-skills h2,
-.soft-skills h2{
-
-    margin-top:30px;
-
-}
-
-/* =====================================================
-   LINK
-   ===================================================== */
-
-a{
-
-    transition:.2s;
-
-}
-
-a:hover{
-
-    opacity:.75;
-
-}
-
-/* =====================================================
-   EVIDENZIAZIONE TESTO
-   ===================================================== */
-
-b,strong{
-
-    font-weight:700;
-
-    color:#111;
-
-}
-
-/* =====================================================
-   SPAZIATURE
-   ===================================================== */
-
-section{
-
-    margin-bottom:18px;
-
-}
-
-section:last-child{
-
-    margin-bottom:0;
-
-}
-
-/* =====================================================
-   LISTE (compatibilità)
-   ===================================================== */
-
-ul{
-
-    margin-left:18px;
-
-    margin-top:8px;
-
-}
-
-li{
-
-    margin-bottom:6px;
-
-}
-
-/* =====================================================
+/* =========================================
    STAMPA
-   ===================================================== */
+========================================= */
 
-@media print{
+@page {
+    size: A4;
+    margin: 0;
+}
 
-    body{
+@media print {
 
-        background:white;
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
 
-        margin:0;
-
-        padding:0;
-
+        background-color: #ffffff;
     }
 
-    .contenitore{
-
-        width:210mm;
-
-        min-height:297mm;
-
-        margin:0;
-
-        box-shadow:none;
-
-        page-break-after:avoid;
-
+    body {
+        margin: 0;
     }
 
-    .experience{
+    .contenitore {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
 
-        page-break-inside:avoid;
+        margin: 0;
 
+        box-shadow: none;
+
+        overflow: hidden;
     }
 
-    a{
+    .colonna-sinistra {
+        min-height: 297mm;
 
-        color:inherit;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
 
-        text-decoration:none;
-
+    .periodo {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
 }
 
-/* =====================================================
-   OTTIMIZZAZIONE A4
-   ===================================================== */
 
-.nome{
+/* =========================================
+   RESPONSIVE
+========================================= */
 
-    font-size:30px;
+@media screen and (max-width: 850px) {
 
-}
+    .contenitore {
+        grid-template-columns: 1fr;
 
-.job{
+        width: 100%;
+        min-height: auto;
 
-    font-size:15px;
+        margin: 0;
+    }
 
-}
+    .colonna-sinistra {
+        min-height: auto;
+    }
 
-.colonna-sinistra p{
-
-    font-size:12.5px;
-
-}
-
-.colonna-destra p{
-
-    font-size:13px;
-
-}
-
-.experience h3{
-
-    font-size:22px;
-
-}
-
-.experience h4{
-
-    font-size:15px;
-
-}
-
-.periodo{
-
-    font-size:11px;
+    .colonna-destra {
+        padding: 28px 24px;
+    }
 
 }
