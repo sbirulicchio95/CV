@@ -319,9 +319,9 @@ body {
 
     color: #22252a;
 
-    font-size: 14.2px;
+    font-size: 10px;
     line-height: 1.08;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 
@@ -333,7 +333,7 @@ body {
     color: #71767f;
 
     font-size: 10.5px;
-    line-height: 1.15;
+    line-height: 1;
     font-weight: 600;
 }
 
