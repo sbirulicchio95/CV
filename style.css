@@ -12,29 +12,34 @@ body {
     padding: 0;
 }
 
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
 body {
-    background-color: #e9ebef;
+    background: #e7e9ed;
+    color: #25282d;
     font-family: "Arimo", Arial, sans-serif;
-    color: #24272d;
 }
 
 
 /* =========================================
-   CONTENITORE PRINCIPALE
+   STRUTTURA A4
 ========================================= */
 
 .contenitore {
     display: grid;
-    grid-template-columns: 245px 1fr;
+    grid-template-columns: 235px 1fr;
 
     width: 210mm;
     min-height: 297mm;
 
-    margin: 20px auto;
+    margin: 18px auto;
 
-    background-color: #ffffff;
+    background: #ffffff;
 
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -43,106 +48,130 @@ body {
 ========================================= */
 
 .colonna-sinistra {
-    background-color: #202936;
-    color: #ffffff;
+    min-width: 0;
 
-    padding: 22px 24px 18px;
+    padding: 17px 20px 15px;
+
+    background: #202936;
+    color: #f7f8fa;
 }
 
 .intro {
     text-align: center;
 }
 
-.div-foto {
+.div-foto,
+.div_foto {
     display: flex;
     justify-content: center;
 
-    margin-bottom: 14px;
+    margin: 0 0 10px;
 }
 
 .foto {
     display: block;
 
-    width: 104px;
-    height: 104px;
+    width: 88px;
+    height: 88px;
 
     object-fit: cover;
     object-position: center;
 
-    border: 4px solid rgba(255, 255, 255, 0.28);
+    border: 3px solid rgba(255, 255, 255, 0.35);
     border-radius: 50%;
 }
 
 .nome {
-    margin: 0 0 7px;
+    margin: 0 0 5px;
 
-    font-size: 27px;
+    color: #ffffff;
+
+    font-size: 23px;
     line-height: 0.98;
-
     font-weight: 700;
 
-    letter-spacing: 1.4px;
-
+    letter-spacing: 1.2px;
     text-transform: uppercase;
 }
 
 .job {
     margin: 0;
 
-    font-size: 12px;
-    line-height: 1.45;
+    color: #e8ebf0;
 
-    font-weight: 400;
+    font-size: 10.5px;
+    line-height: 1.35;
+    font-weight: 500;
 
-    letter-spacing: 1.6px;
-
+    letter-spacing: 1.25px;
     text-transform: uppercase;
 }
+
+
+/* =========================================
+   SEPARATORI SIDEBAR
+========================================= */
 
 .interruzione {
     width: 100%;
     height: 1px;
 
-    margin: 14px 0;
+    margin: 10px 0;
 
     border: 0;
 
-    background-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.16);
 }
+
+
+/* =========================================
+   TESTI SIDEBAR
+========================================= */
 
 .colonna-sinistra section {
     margin: 0;
+    padding: 0;
 }
 
 .colonna-sinistra h3 {
-    margin: 0 0 8px;
+    margin: 0 0 6px;
 
-    font-size: 11px;
+    color: #ffffff;
+
+    font-size: 9.8px;
     line-height: 1.2;
-
     font-weight: 700;
 
-    letter-spacing: 1.6px;
-
+    letter-spacing: 1.4px;
     text-transform: uppercase;
 }
 
 .colonna-sinistra p {
-    margin: 0 0 8px;
+    margin: 0 0 6px;
 
-    font-size: 10.3px;
-    line-height: 1.42;
+    color: #e5e9ef;
 
-    color: rgba(255, 255, 255, 0.92);
+    font-size: 9.2px;
+    line-height: 1.34;
+    font-weight: 400;
 }
 
 .colonna-sinistra p:last-child {
     margin-bottom: 0;
 }
 
-.colonna-sinistra strong {
+/* Contrasto reale dei grassetti nella colonna sinistra */
+
+.colonna-sinistra strong,
+.colonna-sinistra b {
     color: #ffffff;
+
     font-weight: 700;
+}
+
+.colonna-sinistra a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 
@@ -152,22 +181,35 @@ body {
 
 .contatti p {
     display: grid;
-    grid-template-columns: 16px 1fr;
-    gap: 7px;
+    grid-template-columns: 14px minmax(0, 1fr);
+    gap: 5px;
 
     align-items: start;
+
+    margin-bottom: 5px;
 }
 
 .contatti i {
-    padding-top: 2px;
+    padding-top: 1px;
 
-    font-size: 10px;
+    color: #c9d2df;
 
-    color: #c5cede;
+    font-size: 9px;
 }
 
 .contatti span {
+    min-width: 0;
+
     overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   PROFILO
+========================================= */
+
+.profilo p {
+    line-height: 1.38;
 }
 
 
@@ -178,30 +220,35 @@ body {
 .skills {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-    gap: 4px 8px;
+    gap: 3px 7px;
 }
 
 .skills span {
     display: block;
 
-    font-size: 9.7px;
-    line-height: 1.25;
+    color: #eef1f5;
 
-    color: rgba(255, 255, 255, 0.94);
+    font-size: 8.7px;
+    line-height: 1.22;
 }
 
 
 /* =========================================
-   FORMAZIONE E CERTIFICAZIONI
+   FORMAZIONE, CERTIFICAZIONI, PREMI
 ========================================= */
 
 .titolo-secondario {
-    margin-top: 12px !important;
+    margin-top: 9px !important;
 }
 
 .lista-compatta {
-    margin-bottom: 7px !important;
+    margin-bottom: 5px !important;
+}
+
+.formazione-certificazioni p,
+.premi p,
+.lingue p {
+    line-height: 1.3;
 }
 
 
@@ -210,7 +257,9 @@ body {
 ========================================= */
 
 .colonna-destra {
-    padding: 27px 32px 20px;
+    min-width: 0;
+
+    padding: 19px 27px 14px;
 }
 
 .experiences {
@@ -224,12 +273,10 @@ body {
 ========================================= */
 
 .experience {
-    position: relative;
+    margin: 0 0 10px;
+    padding: 0 0 9px;
 
-    margin: 0 0 17px;
-    padding: 0 0 15px;
-
-    border-bottom: 1px solid #e8e9ec;
+    border-bottom: 1px solid #e7e9ed;
 
     break-inside: avoid;
     page-break-inside: avoid;
@@ -243,100 +290,112 @@ body {
     border-bottom: 0;
 }
 
+
+/* Periodo */
+
 .periodo {
     display: inline-block;
 
-    margin-bottom: 7px;
-    padding: 4px 10px;
+    margin: 0 0 4px;
+    padding: 3px 8px;
 
-    border-radius: 20px;
+    border-radius: 12px;
 
-    background-color: #f1f4ff;
-    color: #6681ba;
+    background: #f1f4fb;
+    color: #647cae;
 
-    font-size: 9.5px;
+    font-size: 8.2px;
     line-height: 1;
-
     font-weight: 700;
 
-    letter-spacing: 0.4px;
-
+    letter-spacing: 0.3px;
     text-transform: uppercase;
 }
 
+
+/* Titolo professionale */
+
 .experience h2 {
-    margin: 0 0 2px;
-
-    font-size: 18px;
-    line-height: 1.08;
-
-    font-weight: 700;
+    margin: 0 0 1px;
 
     color: #22252a;
+
+    font-size: 14.2px;
+    line-height: 1.08;
+    font-weight: 700;
 }
+
+
+/* Azienda */
 
 .experience h3 {
-    margin: 0 0 8px;
+    margin: 0 0 5px;
 
-    font-size: 12.5px;
-    line-height: 1.2;
+    color: #71767f;
 
+    font-size: 10.5px;
+    line-height: 1.15;
     font-weight: 600;
-
-    color: #727780;
 }
 
+
+/* Descrizioni */
+
 .experience p {
-    margin: 0 0 7px;
+    margin: 0 0 4px;
 
-    font-size: 10.7px;
-    line-height: 1.43;
+    color: #373b41;
 
-    text-align: justify;
+    font-size: 9.2px;
+    line-height: 1.34;
+    font-weight: 400;
 
-    color: #353940;
+    text-align: left;
 }
 
 .experience p:last-child {
     margin-bottom: 0;
 }
 
-.experience strong {
-    font-weight: 700;
+.experience strong,
+.experience b {
+    color: #202328;
 
-    color: #20242a;
+    font-weight: 700;
 }
 
 
 /* =========================================
-   ESPERIENZE COMPATTE
+   ESPERIENZE MENO RECENTI
 ========================================= */
 
 .experience-compatta {
-    margin-bottom: 13px;
-    padding-bottom: 12px;
+    margin-bottom: 8px;
+    padding-bottom: 7px;
 }
 
 .experience-compatta .periodo {
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 }
 
 .experience-compatta h2 {
-    font-size: 16.5px;
+    font-size: 13.2px;
 }
 
 .experience-compatta h3 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+
+    font-size: 10px;
 }
 
 .experience-compatta p {
-    font-size: 10.4px;
-    line-height: 1.38;
+    font-size: 8.9px;
+    line-height: 1.3;
 }
 
 
 /* =========================================
-   STAMPA
+   STAMPA A4
 ========================================= */
 
 @page {
@@ -351,27 +410,25 @@ body {
         width: 210mm;
         height: 297mm;
 
-        background-color: #ffffff;
-    }
-
-    body {
         margin: 0;
+        padding: 0;
+
+        background: #ffffff;
     }
 
     .contenitore {
         width: 210mm;
         height: 297mm;
         min-height: 297mm;
+        max-height: 297mm;
 
         margin: 0;
 
         box-shadow: none;
-
-        overflow: hidden;
     }
 
     .colonna-sinistra {
-        min-height: 297mm;
+        height: 297mm;
 
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -381,12 +438,11 @@ body {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
-
 }
 
 
 /* =========================================
-   RESPONSIVE
+   VISUALIZZAZIONE MOBILE
 ========================================= */
 
 @media screen and (max-width: 850px) {
@@ -405,7 +461,6 @@ body {
     }
 
     .colonna-destra {
-        padding: 28px 24px;
+        padding: 24px 20px;
     }
-
 }
